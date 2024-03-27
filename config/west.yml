@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: clicketysplit
-      revision: pepito-v1.13
+      revision: clickety_split_series_zmk_v3.5_power_domains
       import: app/west.yml
   self:
     path: config
