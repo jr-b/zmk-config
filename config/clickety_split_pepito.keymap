@@ -152,7 +152,7 @@
             label = " Lower";
             bindings = <
 &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                           &kp N6      &kp N7      &kp N8     &kp N9     &kp N0     &trans
-&kp CAPS   &tdx_LRA   &tdw_LRP   &tdx_LRB   &tdx_LRR   &trans                           &trans      &trans      &trans     &trans     &kp QUOT   &trans
+&kp CAPS   &tdx_LRA   &tdw_LRP   &tdx_LRB   &tdx_LRR   &kp AT_SIGN                           &trans      &trans      &trans     &trans     &kp QUOT   &trans
 &trans     &trans     &trans     &trans     &trans     &trans                           &kp enDSH_X &kp emDSH_X &trans     &trans     &trans     &trans
                                  &trans     &trans     &trans     &trans      &trans    &trans      &trans     &tog QC_N
             >;
