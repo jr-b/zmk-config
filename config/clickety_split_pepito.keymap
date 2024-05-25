@@ -18,12 +18,6 @@
 #define enDSH_X LA(MINUS)
 #define emDSH_X LS(LA(MINUS))
 
-#define BT0     BT_SEL 0
-#define BT1     BT_SEL 1
-#define BT2     BT_SEL 2
-#define BT3     BT_SEL 3
-#define BT4     BT_SEL 4
-
 #define BOOTLDR     &bootloader
 #define SYSRSET     &sys_reset
 
@@ -151,7 +145,7 @@
         firmware_layer {
             label = " BLE";
             bindings = <
-&none      &bt BT0     &bt BT1  &bt BT2    &bt BT3    &bt BT4                          &bt BT0    &bt BT1    &bt BT2    &bt BT3    &bt BT4    &none 
+&none      &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3   &bt BT_SEL 4    &none 
 &none      BOOTLDR     SYSRSET  &none      &none      &none                            &none      &none      &none      SYSRSET    BOOTLDR    &none
 &none      &none       &none    &none      &none      &none                            &none      &none      &none      &none      &none      &none
                                 &none      &bt BT_CLR &trans     &trans      &trans    &trans     &bt BT_CLR &none 
