@@ -9,8 +9,6 @@
     &kp LSHIFT &kp Z    &kp X    &kp C     &kp V     &kp B      &kp LC(A)                        &kp LC(X) &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH &kp RCTRL
                                  &kp LGUI  &kp DEL   &kp RET    &kp SPACE                        &kp SPACE &kp TAB   &kp BSPC  &kp RALT
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
