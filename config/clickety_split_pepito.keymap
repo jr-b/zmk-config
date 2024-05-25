@@ -97,6 +97,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp LG(RIGHT)>, <&kp END>;
         };
+
+        tdx_LRG: tap_dance_8 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp FR_LT>, <&kp FR_GT>;
+        };
     };
     
     keymap {
@@ -107,7 +114,7 @@
             bindings = <
 &kp ESC     &kp Q        &kp W        &kp E       &kp R       &kp T                          &kp Y    &kp U       &kp I       &kp O        &kp P     &kp BSLH
 &kp TAB     &ht LSHFT A  &ht LCTRL S  &ht LALT D  &mt LGUI F  &kp G                          &kp H    &ht RGUI J  &ht RALT K  &ht RSHFT L  &kp SEMI  &kp BSPC
-&kp LSHIFT  &kp Z        &kp X        &kp C       &kp V       &kp B                          &kp N    &kp M       &kp COMMA   &kp DOT      &kp FR_E_ACUTE  &kp RCTRL
+&kp LSHIFT  &kp Z        &kp X        &kp C       &kp V       &kp B                          &kp N    &kp M       &kp COMMA   &kp DOT      &kp FR_E_ACUTE  &kp RSHFT
                                 &kp LALT   &kp LGUI   &lt 1 RET  &lt 2 MINUS    &lt 2 EQUAL &lt 1 SPACE  &kp BSPC   &mo QC_F
             >;
         };
@@ -116,7 +123,7 @@
             label = " Lower";
             bindings = <
 &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                           &kp N6      &kp N7      &kp N8     &kp N9     &kp N0     &trans
-&kp CAPS   &tdx_LRA   &tdw_LRP   &tdx_LRB   &tdx_LRR   &kp AT_SIGN                           &trans      &trans      &trans     &trans     &kp QUOT   &trans
+&kp CAPS   &tdx_LRA   &tdw_LRP   &tdx_LRB   &tdx_LRR   &kp AT_SIGN                      &tdx_LRG      &trans      &trans     &trans     &kp QUOT   &trans
 &trans     &trans     &trans     &trans     &trans     &trans                           &kp enDSH_X &kp emDSH_X &trans     &trans     &trans     &trans
                                  &trans     &trans     &trans     &trans      &trans    &trans      &trans     &tog QC_N
             >;
@@ -126,8 +133,8 @@
             label = " Raise";
             bindings = <
 &trans     &trans     &trans     &trans     &kp OSX_SC &trans                           &kp PG_UP  &tdx_BOL   &kp UP     &tdx_EOL   &kp BSLH       &trans
-&kp CAPS   &trans     &trans     &trans     &trans     &trans                           &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp GRAVE      &kp GRAV
-&trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &trans     &kp TILDE      &trans
+&kp CAPS   &trans     &trans     &trans     &trans     &trans                           &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp FR_GRAVE      &kp GRAVE
+&trans     &trans     &trans     &trans     &trans     &trans                           &trans     &trans     &trans     &trans     &kp FR_TILDE      &trans
                                  &trans     &trans     &trans     &trans      &trans    &trans     &kp DEL    &trans
             >;
         };
