@@ -29,6 +29,14 @@
 #define LOCK_X  LC(LG(Q))
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        adjust_osx_layer {
+            if-layers = <QX_L QX_R>;
+            then-layer = <QX_A>;
+        };
+    };
+    
     behaviors {
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
