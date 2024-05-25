@@ -2,6 +2,85 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        adjust_osx_layer {
+            if-layers = <QX_L QX_R>;
+            then-layer = <QX_A>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_osx_ESC {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <QX_M>;
+            bindings = <&kp ESC>;
+        };
+    };
+
+    behaviors {
+        ht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&kp>, <&kp>;
+        };
+        
+        tdx_Q: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Q>, <&kp LG(Q)>;
+        };
+
+        tdw_LRP: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+        };
+
+        tdx_LRB: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBKT>, <&kp RBKT>;
+        };
+
+        tdx_LRR: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LBRC>, <&kp RBRC>;
+        };
+
+        tdx_LRA: tap_dance_5 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LT>, <&kp GT>;
+        };
+
+        tdx_BOL: tap_dance_6 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LG(LEFT)>, <&kp HOME>;
+        };
+
+        tdx_EOL: tap_dance_7 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LG(RIGHT)>, <&kp END>;
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
@@ -15,3 +94,4 @@
         };
     };
 };
+
