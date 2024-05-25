@@ -99,7 +99,7 @@
 &kp ESC     &kp Q        &kp W        &kp E       &kp R       &kp T                          &kp Y    &kp U       &kp I       &kp O        &kp P     &kp BSLH
 &kp TAB     &ht LSHFT A  &ht LCTRL S  &ht LALT D  &mt LGUI F  &kp G                          &kp H    &ht RGUI J  &ht RALT K  &ht RSHFT L  &kp SEMI  &kp BSPC
 &kp LSHIFT  &kp Z        &kp X        &kp C       &kp V       &kp B                          &kp N    &kp M       &kp COMMA   &kp DOT      &kp FSLH  &kp RCTRL
-                                      &kp SPACE   &kp DEL     &kp RET  &kp SPACE  &kp SPACE  &kp TAB  &kp BSPC    &kp RALT
+                                &kp LALT   &kp LGUI   &lt 1 RET  &lt 2 MINUS    &lt 2 EQUAL &lt 1 SPACE  &kp BSPC   &mo QC_F
             >;
         };
 
