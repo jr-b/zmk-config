@@ -15,7 +15,3 @@
         };
     };
 };
-
-&ht LSHFT A  &ht LCTRL S  &ht LALT D  &ht LGUI F
-
-&ht RGUI J &ht RALT K  &ht RSHFT L
