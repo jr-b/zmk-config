@@ -1,6 +1,38 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+// Layers
+#define QX_M    0       // Main
+#define QX_L    1       // Lower
+#define QX_R    2       // Raise
+#define QX_A    3       // Adjust
+
+#define QC_N    4       // Number Pad
+#define QC_F    5       // Firmware
+
+// Short versions
+#define OSX_SC  LG(LS(N4))
+#define OSX_BOL LG(LEFT)
+#define OSX_EOL LG(RIGHT)
+
+#define enDSH_X LA(MINUS)
+#define emDSH_X LS(LA(MINUS))
+
+#define BT0     BT_SEL 0
+#define BT1     BT_SEL 1
+#define BT2     BT_SEL 2
+#define BT3     BT_SEL 3
+#define BT4     BT_SEL 4
+
+#define BOOTLDR     &bootloader
+#define SYSRSET     &sys_reset
+
+#define VOLUP   C_VOL_UP
+#define VOLDN   C_VOL_DN
+#define VOLMT   C_MUTE
+
+#define LOCK_X  LC(LG(Q))
+
 / {
     behaviors {
         ht: hold_tap {
