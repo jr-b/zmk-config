@@ -1,11 +1,19 @@
 manifest:
   remotes:
-    - name: clicketysplit
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: clickety-split
       url-base: https://github.com/ClicketySplit
   projects:
+    # Pinned to the ZMK revision Clickety Split validates Pepito against.
+    # Keep in sync with the build-user-config.yml ref in .github/workflows/build.yml.
     - name: zmk
-      remote: clicketysplit
-      revision: clickety_split_series_zmk_v3.5_power_domains
+      remote: zmkfirmware
+      revision: 83bc82dbfdcda4ef392461202534a7cc337ca055
       import: app/west.yml
+    # Pepito board/shield definitions (display, matrix, Studio layout).
+    - name: zmk-clickety-split
+      remote: clickety-split
+      revision: 9c9229f725a37d865176cb5e3418adf0c9470023
   self:
     path: config
