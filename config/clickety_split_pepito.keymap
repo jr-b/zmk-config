@@ -41,7 +41,7 @@
     behaviors {
         // Home row mods: only act as a modifier when the next key is on the
         // other hand (or a thumb), so same-hand rolls always type letters.
-        hml: home_row_mod_left {
+        hml: hml {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
@@ -53,7 +53,7 @@
             bindings = <&kp>, <&kp>;
         };
 
-        hmr: home_row_mod_right {
+        hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
@@ -65,62 +65,62 @@
             bindings = <&kp>, <&kp>;
         };
         
-        tdx_Q: tap_dance_1 {
+        tdx_Q: td1 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp Q>, <&kp LG(Q)>;
         };
 
-        tdw_LRP: tap_dance_2 {
+        tdw_LRP: td2 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LPAR>, <&kp RPAR>;
         };
 
-        tdx_LRB: tap_dance_3 {
+        tdx_LRB: td3 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp FR_LBKT>, <&kp FR_RBKT>;
         };
 
-        tdx_LRR: tap_dance_4 {
+        tdx_LRR: td4 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp FR_LBRC>, <&kp FR_RBRC>;
         };
 
-        tdx_QUO: tap_dance_5 {
+        tdx_QUO: td5 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp FR_SQT>, <&kp FR_DQT>;
         };
 
-        tdx_BOL: tap_dance_6 {
+        tdx_BOL: td6 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LG(LEFT)>, <&kp HOME>;
         };
 
-        tdx_EOL: tap_dance_7 {
+        tdx_EOL: td7 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LG(RIGHT)>, <&kp END>;
         };
 
-        tdx_LRG: tap_dance_8 {
+        tdx_LRG: td8 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp FR_LT>, <&kp FR_GT>;
         };
-        tdx_SLH: tap_dance_9 {
+        tdx_SLH: td9 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
@@ -132,7 +132,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = " Base";
+            display-name = " Base";
             bindings = <
 &kp FR_SLASH &kp Q         &kp W         &kp E        &kp R        &kp T                    &kp Y    &kp U        &kp I        &kp O         &kp P           &kp FR_A_GRAVE
 &kp TAB      &hml LSHFT A  &hml LCTRL S  &hml LALT D  &hml LGUI F  &kp G                    &kp H    &hmr RGUI J  &hmr RALT K  &hmr RSHFT L  &kp FR_SEMI     &kp FR_E_GRAVE
@@ -142,7 +142,7 @@
         };
 
         lower_osx_layer {
-            label = " Lower";
+            display-name = " Lower";
             bindings = <
 &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                           &kp N6      &kp N7      &kp N8     &kp N9     &kp N0     &kp FR_C_CEDILLA
 &kp CAPS   &tdx_QUO   &tdw_LRP   &tdx_LRB   &tdx_LRR   &kp AT_SIGN                      &tdx_LRG      &tdx_SLH      &trans     &trans     &kp QUOT   &kp FR_CARET
@@ -152,7 +152,7 @@
         };
 
         raise_osx_layer {
-            label = " Raise";
+            display-name = " Raise";
             bindings = <
 &trans     &trans     &trans     &trans     &kp OSX_SC &trans                           &kp PG_UP  &tdx_BOL   &kp UP     &tdx_EOL   &kp BSLH       &trans
 &kp CAPS   &trans     &trans     &trans     &trans     &trans                           &kp BSPC   &kp LEFT   &kp DOWN   &kp RIGHT  &kp FR_GRAVE      &kp GRAVE
@@ -162,7 +162,7 @@
         };
 
         adjust_osx_layer {
-            label = " Adjust";
+            display-name = " Adjust";
             bindings = <
 &trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                           &none      &none      &kp VOLUP  &none      &none      &none
 &kp CAPS   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10                          &none      &none      &kp VOLDN  &kp LOCK_X &none      &none 
@@ -172,7 +172,7 @@
         };
 
         numpad_layer {
-            label = "Numpad";
+            display-name = "Numpad";
             bindings = <
 &trans     &none     &none      &none      &none      &none                            &kp ASTRK  &kp N7     &kp N8     &kp N9     &kp MINUS  &none 
 &trans     &none     &none      &none      &none      &none                            &kp FR_SLASH &kp N4     &kp N5     &kp N6     &kp PLUS   &none 
@@ -182,7 +182,7 @@
         };
 
         firmware_layer {
-            label = " BLE";
+            display-name = " BLE";
             bindings = <
 &none      &bt BT_SEL 0     &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3   &bt BT_SEL 4    &none 
 &none      BOOTLDR     SYSRSET  &none      &none      &none                            &none      &none      &none      SYSRSET    BOOTLDR    &none
