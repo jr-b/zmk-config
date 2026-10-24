@@ -16,6 +16,11 @@ include:
   - board: xiao_ble//zmk
     shield: clickety_split_pepito_left
     artifact-name: pepito-left
+  # Optional: left half with ZMK Studio over USB (flash instead of pepito-left).
+  - board: xiao_ble//zmk
+    shield: clickety_split_pepito_left clickety_split_pepito_studio
+    snippet: studio-rpc-usb-uart
+    artifact-name: pepito-left-studio
   - board: xiao_ble//zmk
     shield: clickety_split_pepito_right
     artifact-name: pepito-right
